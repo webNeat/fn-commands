@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+	fs = require('fs');
+
+Array.prototype.unique = function(){
+   var u = {}, a = [];
+   for(var i = 0, l = this.length; i < l; ++i){
+      if(u.hasOwnProperty(this[i])) {
+         continue;
+      }
+      a.push(this[i]);
+      u[this[i]] = 1;
+   }
+   return a;
+}
+
+var trim = function(str) {
+	return str.trim();
+}
+
+program
+	.version('0.0.1')
+	.arguments('<words> <document> <result>')
+	.action(function(words, doc, result) {
+		doc = fs.readFileSync(doc, 'utf-8');
+		words = fs.readFileSync(words, 'utf-8')
+				.split("\n")
+				.map(trim)
+				.unique()
+				.filter(function(word) {
+					return (doc.indexOf(word) == -1);
+				})
+				.join("\n");
+		fs.writeFileSync(result, words); 
+	});
+
+program.parse(process.argv);

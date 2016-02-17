@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+	fs = require('fs');
+
+Array.prototype.unique = function(){
+   var u = {}, a = [];
+   for(var i = 0, l = this.length; i < l; ++i){
+      if(u.hasOwnProperty(this[i])) {
+         continue;
+      }
+      a.push(this[i]);
+      u[this[i]] = 1;
+   }
+   return a;
+}
+
+var getLinesOf = function(filename) {
+	return fs.readFileSync(filename, 'utf8')
+			.split("\n")
+			.map(function(line) { return line.trim() });
+}
+
+program
+	.version('0.0.1')
+	.arguments('<file1> <file2> <dest>')
+	.action(function(file1, file2, dest) {
+		var list1 = getLinesOf(file1);
+		var list2 = getLinesOf(file2);
+		var intersection = list1.filter(function(line) {
+			return (list2.indexOf(line) != -1);
+		});
+		fs.writeFileSync(dest, intersection.join("\n"));
+	});
+
+program.parse(process.argv);
