@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-var mkfiles = require('../build/cmds/mkfiles')
+var ttsRegErrors = require('../build/cmds/tts-reg-errors')
 var commander = require('commander')
 
 commander
 	.version('0.0.1')
-	.arguments('<filename>')
-	.action(mkfiles.run)
+	.arguments('<result-file>')
+	.action(ttsRegErrors.run)
 
 commander.parse(process.argv)

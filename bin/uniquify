@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
-var run = require('../build/cmds/uniquify');
+var uniquify = require('../build/cmds/uniquify')
+var commander = require('commander')
 
-console.log(run);
+commander
+	.version('0.0.1')
+	.arguments('<filename>')
+	.action(uniquify.run)
+
+commander.parse(process.argv)

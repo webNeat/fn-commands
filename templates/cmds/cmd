@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-var mkfiles = require('../build/cmds/mkfiles')
+var {{camelCmdName}} = require('../build/cmds/{{cmdName}}')
 var commander = require('commander')
 
 commander
 	.version('0.0.1')
-	.arguments('<filename>')
-	.action(mkfiles.run)
+	.arguments('{{syntax}}')
+	.action({{camelCmdName}}.run)
 
 commander.parse(process.argv)

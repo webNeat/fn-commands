@@ -1,72 +1,45 @@
-import {curry, pipe} from 'ramda'
+import arr from './lib/array'
+import debug from './lib/debug'
+import io from './lib/io'
+import math from './lib/math'
+import obj from './lib/object'
+import str from './lib/string'
+import template from './lib/template'
 
-// Logic operators
-export const and = curry((a, b) => a && b)
-export const or = curry((a, b) => a || b)
-export const not = a => !a
+// Math
+export const and = math.and
+export const or = math.or
+export const not = math.not
+export const equal = math.equal
+export const different = math.different
+export const lessThen = math.lessThen
+export const greaterThen = math.greaterThen
 
-// Comparaison operators
-export const equal = curry((a, b) => a == b)
-export const different = curry((a, b) => a != b)
-export const lessThen = curry((a, b) => b < a)
-export const greaterThen = curry((a, b) => b > a)
+// String
+export const snakeToCamelCase = str.snakeToCamelCase
 
-// String operations
-export const split = curry((separator, text) => text.split(separator))
-export const match = curry((pattern, text) => text.match(pattern))
-export const trim = text => text.trim()
+// Array
+export const size = arr.size
+export const join = arr.join
+export const map = arr.map
+export const filter = arr.filter
+export const reduce = arr.reduce
+export const contains = arr.contains
+export const append = arr.append
+export const occurencesOf = arr.occurencesOf
+export const occurencesIn = arr.occurencesIn
+export const uniquify = arr.uniquify
 
-// Array operations
-export const size = elements => elements.length
-export const join = curry((glue, elements) => elements.join(glue))
-export const map = curry((operation, elements) => elements.map(operation))
-export const filter = curry((condition, elements) => elements.filter(condition))
-export const reduce = curry((operation, initial, elements) => elements.reduce(operation, initial))
-export const contains = curry((item, elements) => elements.indexOf(item) != -1)
-export const append = curry((item, elements) => elements.concat(item))
+// Object
+export const getAttr = obj.getAttr
+export const setAttr = obj.setAttr
 
-export const occurencesOf = curry((item, elements) => pipe(filter(equal(item)), size) (elements))
-export const occurencesIn = curry((elements, item) => pipe(filter(equal(item)), size) (elements))
-
-export const uniquify = reduce((elements, item) => (contains(item, elements)) ? elements : append(item, elements), [])
-
-// Object operations
-export const attr = curry((name, obj) => obj[name])
-
-// File Read/Write
-import fs from 'fs'
-export const read = filename => fs.readFileSync(filename, 'utf-8')
-export const write = (filename, content) => fs.writeFileSync(filename, content)
+// IO
+export const read = io.read
+export const write = io.write
 
 // Debug
-export const log = something => {
-	console.log(something)
-	return something
-}
+export const log = debug.log
 
-export const all = {
-	and,
-	or,
-	not,
-	equal,
-	different,
-	lessThen,
-	greaterThen,
-	split,
-	match,
-	trim,
-	size,
-	join,
-	map,
-	filter,
-	reduce,
-	contains,
-	append,
-	occurencesOf,
-	occurencesIn,
-	uniquify,
-	attr,
-	read,
-	write,
-	log
-}
+// Template
+export const render = template.render

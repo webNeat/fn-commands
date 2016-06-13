@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-var mkfiles = require('../build/cmds/mkfiles')
+var maker = require('../build/cmds/maker')
 var commander = require('commander')
 
 commander
 	.version('0.0.1')
-	.arguments('<filename>')
-	.action(mkfiles.run)
+	.arguments('<cmdName> <syntax>')
+	.action(maker.run)
 
 commander.parse(process.argv)

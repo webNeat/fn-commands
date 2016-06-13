@@ -1,5 +1,3 @@
-import * as _ from './lib'
+import {and, or} from 'ramda'
 
-let list = [1, 2, 3, 1, 5, 1, 2];
-
-console.log(_.uniquify(list));
+console.log(or(true, false))
