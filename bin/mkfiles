@@ -1,11 +1,14 @@
-#!/usr/bin/env node
+#!/usr/bin/php
+<?php
 
-var mkfiles = require('../build/cmds/mkfiles')
-var commander = require('commander')
+echo 'Hello World !';
 
-commander
-	.version('0.0.1')
-	.arguments('<filename>')
-	.action(mkfiles.run)
+// var mkfiles = require('../build/cmds/mkfiles')
+// var commander = require('commander')
 
-commander.parse(process.argv)
+// commander
+// 	.version('0.0.1')
+// 	.arguments('<filename>')
+// 	.action(mkfiles.run)
+
+// commander.parse(process.argv)
