@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+var difference = require('../build/cmds/difference')
+var commander = require('commander')
+
+commander
+	.version('0.0.1')
+	.arguments('<file1> <file2>')
+	.action(difference.run)
+
+commander.parse(process.argv)
