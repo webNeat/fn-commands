@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var sqlSchema = require('../build/cmds/sql-schema')
+var sqlSchema = require('../cmds/sql-schema')
 var commander = require('commander')
 
 commander

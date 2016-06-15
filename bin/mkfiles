@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var mkfiles = require('../build/cmds/mkfiles')
+var mkfiles = require('../cmds/mkfiles')
 var commander = require('commander')
 
 commander

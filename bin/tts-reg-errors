@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var ttsRegErrors = require('../build/cmds/tts-reg-errors')
+var ttsRegErrors = require('../cmds/tts-reg-errors')
 var commander = require('commander')
 
 commander

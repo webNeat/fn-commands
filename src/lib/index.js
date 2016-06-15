@@ -1,10 +1,11 @@
-import arr from './lib/array'
-import debug from './lib/debug'
-import io from './lib/io'
-import math from './lib/math'
-import obj from './lib/object'
-import str from './lib/string'
-import template from './lib/template'
+import arr from './array'
+import debug from './debug'
+import io from './io'
+import math from './math'
+import obj from './object'
+import str from './string'
+import template from './template'
+import args from './args'
 
 import {mergeAll} from 'ramda'
 
@@ -49,14 +50,17 @@ export const log = debug.log
 // Template
 export const render = template.render
 
-const lib = mergeAll([
-	arr,
-	debug,
-	io,
-	math,
-	obj,
-	str,
-	template
-])
+// Arguments
+export const parse = args.parse
 
+const lib = mergeAll([
+    arr,
+    debug,
+    io,
+    math,
+    obj,
+    str,
+    template,
+    args
+])
 export default lib

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var {{camelCmdName}} = require('../build/cmds/{{cmdName}}')
+var {{camelCmdName}} = require('../cmds/{{cmdName}}')
 var commander = require('commander')
 
 commander

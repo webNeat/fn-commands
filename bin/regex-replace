@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var regexReplace = require('../build/cmds/regex-replace')
+var regexReplace = require('../cmds/regex-replace')
 var commander = require('commander')
 
 commander

@@ -28,6 +28,5 @@ R.forEach(babelTask, config.folders)
 
 gulp.task('babel', R.map(babelTaskName, config.folders))
 
-gulp.task('default', ['babel'], () => {
-    return gulp.watch(path.join(config.src, '**/*'), ['babel'])
-})
+gulp.task('default', ['babel'], () => 
+    gulp.watch(path.join(config.src, '**/*'), ['babel']))

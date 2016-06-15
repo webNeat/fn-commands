@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var maker = require('../build/cmds/maker')
+var maker = require('../cmds/maker')
 var commander = require('commander')
 
 commander
