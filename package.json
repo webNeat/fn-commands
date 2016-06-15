@@ -5,10 +5,10 @@
   "main": "app.js",
   "scripts": {
     "watch": "echo 'hello world'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp babel && mocha"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "commander": "^2.9.0",
     "jquery": "^3.0.0",
@@ -18,6 +18,8 @@
   "devDependencies": {
     "babel": "^6.5.1",
     "babel-cli": "^6.5.1",
-    "babel-preset-es2015": "^6.5.0"
+    "babel-preset-es2015": "^6.5.0",
+    "mocha": "^2.5.3",
+    "should": "^9.0.2"
   }
 }

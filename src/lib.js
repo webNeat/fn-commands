@@ -39,6 +39,7 @@ export const setAttr = obj.setAttr
 // IO
 export const read = io.read
 export const write = io.write
+export const chmod = io.chmod
 export const transform = io.transform
 export const lines = io.lines
 
