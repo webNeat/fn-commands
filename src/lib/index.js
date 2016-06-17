@@ -20,6 +20,19 @@ export const greaterThen = math.greaterThen
 
 // String
 export const snakeToCamelCase = str.snakeToCamelCase
+export const indexOf = str.indexOf
+export const lastIndexOf = str.lastIndexOf
+export const substring = str.substring
+export const after = str.after
+export const afterLast = str.afterLast
+export const before = str.before
+export const beforeLast = str.beforeLast
+export const between = str.between
+export const betweenFirst = str.betweenFirst
+export const betweenLast = str.betweenLast
+export const occurences = str.occurences
+export const startsWith = str.startsWith
+export const endsWith = str.endsWith
 
 // Array
 export const size = arr.size
@@ -46,6 +59,7 @@ export const lines = io.lines
 
 // Debug
 export const log = debug.log
+export const logBy = debug.logBy
 
 // Template
 export const render = template.render

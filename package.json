@@ -13,6 +13,7 @@
     "commander": "^2.9.0",
     "jquery": "^3.0.0",
     "jsdom": "^9.2.1",
+    "mkdirp": "^0.5.1",
     "ramda": "^0.19.1"
   },
   "devDependencies": {
